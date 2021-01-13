@@ -1,5 +1,19 @@
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= restaurant.name %></li>
-  <% end %>
-</ul>
+<div class="navbar-lewagon navbar-collapse d-flex">
+    <h1>Restaurants</h1>
+    <h5><%= link_to "Add a new restaurant", new_restaurant_path %></h5>
+  </div>
+
+<div class="container">
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-product">
+        <img src="https://source.unsplash.com/random" />
+        <div class="card-product-infos">
+          <h2><%= restaurant.name %></h2>
+          <p><%= restaurant.category %></p>
+          <p><%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
